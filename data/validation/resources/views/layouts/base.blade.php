@@ -6,14 +6,7 @@
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/insert">Add item</a></li>
-        </ul>
-      </nav>
-    </header>
+    @yield('header')
     <main>
       @yield('main')
     </main>

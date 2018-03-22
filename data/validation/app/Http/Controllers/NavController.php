@@ -5,18 +5,34 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use \App\Item as Item;
+use \App\Disc as Disc;
+use \App\Genre as Genre;
 
 class NavController extends Controller
 {
-    public function showStore() {
-      $items = Item::all();
-      return view('store', ['items' => $items]);
-    }
-    public function insert() {
-      return view('insert');
-    }
-    public function update(Request $request) {
-      $item = Item::findOrFail($request['id']);
-      return view('update', ['item' => $item]);
-    }
+  //INSTRUMENTS FUNCTIONS
+  public function showInstruments() {
+    $items = Item::all();
+    return view('instruments', ['items' => $items]);
+  }
+  public function insertInstruments() {
+    return view('insertInstrument');
+  }
+  public function updateInstrument(Request $request) {
+    $item = Item::findOrFail($request['id']);
+    return view('updateInstrument', ['item' => $item]);
+  }
+  //CD FUNCTIONS
+  public function showCDs() {
+    $cds = Disc::all();
+    return view('cds', ['cds' => $cds]);
+  }
+  public function insertCD() {
+    $genres = Genre::all();
+    return view('insertCD', ['genres' => $genres]);
+  }
+  public function updateCD(Request $request) {
+    $cd = Disk::findOrFail($request['id']);
+    return view('updateCD', ['cd' => $cd]);
+  }
 }

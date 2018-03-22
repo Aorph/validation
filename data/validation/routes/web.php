@@ -10,11 +10,24 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+//INSTRUMENTS ROUTES
+Route::get('/', 'NavController@showInstruments');
+Route::get('/instruments', 'NavController@showInstruments');
+Route::get('/insertInstruments', 'NavController@insertInstruments');
 
-Route::get('/', 'NavController@showStore');
-Route::get('/insert', 'NavController@insert');
+Route::post('/updateInstrument', 'NavController@updateInstrument');
+Route::post('/insertedInstrument', 'StockController@insertInstrumentIntoDB');
+Route::post('/updatedInstrument', 'StockController@updateInstrumentIntoDB');
+Route::post('/deleteInstrument', 'StockController@deleteInstrument');
 
-Route::post('/update', 'NavController@update');
-Route::post('/inserted', 'StockController@insertIntoDB');
-Route::post('/updated', 'StockController@updateIntoDB');
-Route::post('/delete', 'StockController@delete');
+//CD ROUTES
+Route::get('/cds', 'NavController@showCDs');
+Route::get('/insertCD', 'NavController@insertCD');
+
+Route::post('/insertedCD', 'StockController@insertCDIntoDB');
+Route::post('/updateCD', 'NavController@updateCD');
+
+//GENRE ROUTES
+Route::get('/addGenre', 'GenreController@addGenre');
+
+Route::post('insertGenre', 'GenreController@insertGenre');

@@ -1,6 +1,17 @@
 @extends('layouts.base')
+@section('header')
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/instruments">Instruments</a></li>
+        <li><a href="/insertInstruments">Add Instrument</a></li>
+        <li><a href="/cds">Cds</a></li>
+      </ul>
+    </nav>
+  </header>
+@endsection
 @section('main')
-  <p>All items</p>
+  <p>All Instruments</p>
   <table>
     <tr>
       <th class="small">Type</th>
@@ -19,15 +30,15 @@
           <td class="small">{{ $item['price'] }}</td>
           <td class="small">{{ $item['stock'] }}</td>
           <td class="small">
-            {{ Form::open(['url' => '/update', 'method' => 'post']) }}
+            {{ Form::open(['url' => '/updateInstrument', 'method' => 'post']) }}
               {{ Form::hidden('id', $item['id']) }}
-              {{ Form::submit('U') }}
+              {{ Form::submit('U', ['class' => 'button']) }}
             {{ Form::close() }}
           </td>
           <td class="small">
-            {{ Form::open(['url' => '/delete', 'method' => 'post']) }}
+            {{ Form::open(['url' => '/deleteInstrument', 'method' => 'post']) }}
               {{ Form::hidden('id', $item['id']) }}
-              {{ Form::submit('X') }}
+              {{ Form::submit('X', ['class' => 'button']) }}
             {{ Form::close() }}
           </td>
         </tr>

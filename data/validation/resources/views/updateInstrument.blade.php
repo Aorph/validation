@@ -1,7 +1,18 @@
 @extends('layouts.base')
+@section('header')
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/instruments">Instruments</a></li>
+        <li><a href="/insertInstruments">Add Instrument</a></li>
+        <li><a href="/cds">Cds</a></li>
+      </ul>
+    </nav>
+  </header>
+@endsection
 @section('main')
-  <p>Update item :</p>
-  {{ Form::open(['url' => '/updated', 'method' => 'post', 'class' => 'form']) }}
+  <p>Update Instrument :</p>
+  {{ Form::open(['url' => '/updatedInstrument', 'method' => 'post', 'class' => 'form']) }}
   {{ Form::hidden('id', $item['id']) }}
     {{ Form::label('type', 'Type') }}
     {{ Form::text('type', $item['type'], ['class' => 'input']) }}

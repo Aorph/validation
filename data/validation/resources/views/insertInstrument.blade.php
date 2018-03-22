@@ -1,7 +1,18 @@
 @extends('layouts.base')
+@section('header')
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/instruments">Instruments</a></li>
+        <li><a href="/insertInstruments">Add Instrument</a></li>
+        <li><a href="/cds">Cds</a></li>
+      </ul>
+    </nav>
+  </header>
+@endsection
 @section('main')
-  <p>Insert a New book</p>
-  {{ Form::open(['url' => '/inserted', 'method' => 'post', 'class' => 'form']) }}
+  <p>Insert a New Instrument</p>
+  {{ Form::open(['url' => '/insertedInstrument', 'method' => 'post', 'class' => 'form']) }}
     {{ Form::label('type', 'Type') }}
     {{ Form::text('type', 'Instrument', ['class' => 'input']) }}
     {{ Form::label('name', 'Name') }}
