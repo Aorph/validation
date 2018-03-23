@@ -15,15 +15,15 @@
   {{ Form::open(['url' => '/updatedInstrument', 'method' => 'post', 'class' => 'form']) }}
   {{ Form::hidden('id', $item['id']) }}
     {{ Form::label('type', 'Type') }}
-    {{ Form::text('type', $item['type'], ['class' => 'input']) }}
+    {{ Form::text('type', $item['type'], ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('name', 'Name') }}
-    {{ Form::text('name', $item['name'], ['class' => 'input']) }}
+    {{ Form::text('name', $item['name'], ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('description', 'Description') }}
-    {{ Form::text('description', $item['description'], ['class' => 'input']) }}
+    {{ Form::text('description', $item['description'], ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('price', 'Price') }}
-    {{ Form::number('price', $item['price'], ['class' => 'input', 'min' => '0']) }}
+    {{ Form::number('price', $item['price'], ['class' => 'input', 'min' => '0', 'required' => 'required']) }}
     {{ Form::label('stock', 'stock') }}
-    {{ Form::number('stock', $item['stock'], ['class' => 'input', 'min' => '0']) }}
+    {{ Form::number('stock', $item['stock'], ['class' => 'input', 'min' => '0', 'required' => 'required']) }}
     {{ Form::submit('Update', ['class' => 'button formButton']) }}
   {{ Form::close() }}
 @endsection

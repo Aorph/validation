@@ -14,15 +14,15 @@
   <p>Insert a New Instrument</p>
   {{ Form::open(['url' => '/insertedInstrument', 'method' => 'post', 'class' => 'form']) }}
     {{ Form::label('type', 'Type') }}
-    {{ Form::text('type', 'Instrument', ['class' => 'input']) }}
+    {{ Form::text('type', 'Instrument', ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('name', 'Name') }}
-    {{ Form::text('name', 'piano', ['class' => 'input']) }}
+    {{ Form::text('name', '', ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('description', 'Description') }}
-    {{ Form::text('description', 'A rare piano', ['class' => 'input']) }}
+    {{ Form::text('description', '', ['class' => 'input', 'required' => 'required']) }}
     {{ Form::label('price', 'Price') }}
-    {{ Form::number('price', '399', ['class' => 'input', 'min' => '0']) }}
+    {{ Form::number('price', '', ['class' => 'input', 'min' => '0', 'required' => 'required']) }}
     {{ Form::label('stock', 'stock') }}
-    {{ Form::number('stock', '12', ['class' => 'input', 'min' => '0']) }}
+    {{ Form::number('stock', '', ['class' => 'input', 'min' => '0', 'required' => 'required']) }}
     {{ Form::submit('Insert', ['class' => 'button formButton']) }}
   {{ Form::close() }}
 @endsection
