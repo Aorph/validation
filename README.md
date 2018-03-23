@@ -5,6 +5,7 @@ This is The data folder and the mysql dump you need.
 Infos you may need too :
 
 DB name : **musicStore**.
+Username and pass are as usual.
 
 Two main pages : CD page and Instrument page.
 Do not attempt to make any sense of the actual datas present in the DB... Just...Please don't...There is none..
