@@ -5,7 +5,7 @@
       <ul>
         <li><a href="/instruments">Instruments</a></li>
         <li><a href="/insertInstruments">Add Instrument</a></li>
-        <li><a href="/cds">Cds</a></li>
+        <li><a href="/cds">CDs</a></li>
       </ul>
     </nav>
   </header>
@@ -27,7 +27,7 @@
           <td class="small">{{ $item['type'] }}</td>
           <td class="small">{{ $item['name'] }}</td>
           <td class="big">{{ $item['description'] }}</td>
-          <td class="small">{{ $item['price'] }}</td>
+          <td class="small">{{ $item['price'] }} €</td>
           <td class="small">{{ $item['stock'] }}</td>
           <td class="small">
             {{ Form::open(['url' => '/updateInstrument', 'method' => 'post']) }}

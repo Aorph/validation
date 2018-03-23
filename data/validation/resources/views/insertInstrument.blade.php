@@ -5,7 +5,7 @@
       <ul>
         <li><a href="/instruments">Instruments</a></li>
         <li><a href="/insertInstruments">Add Instrument</a></li>
-        <li><a href="/cds">Cds</a></li>
+        <li><a href="/cds">CDs</a></li>
       </ul>
     </nav>
   </header>

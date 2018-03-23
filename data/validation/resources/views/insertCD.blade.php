@@ -5,8 +5,8 @@
       <ul>
         <li><a href="/cds">CDs</a></li>
         <li><a href="/insertCD">Add CD</a></li>
-        <li><a href="/instruments">Intruments</a></li>
         <li><a href="/addGenre">Add Genre</a></li>
+        <li><a href="/instruments">Intruments</a></li>
       </ul>
     </nav>
   </header>
@@ -18,17 +18,17 @@
     {{ Form::text('name', 'In becoming a Ghost', ['class' => 'input']) }}
     {{ Form::label('artist', 'Artist') }}
     {{ Form::text('artist', 'The Faceless', ['class' => 'input']) }}
-    {{-- Form::label('genre', 'Genre') }}
-    {{ Form::text('genre', 'rock', ['class' => 'input']) --}}
-    <!-- SHIT'S NOT WORKING.-->
-    @foreach ($genres as $genre)
-      {{ Form::label('genres', $genre->name) }}
-      {{ Form::checkbox('genres[]', $genre->id) }}
-    @endforeach
+    <div class="genres">
+      <p>Choose genre(s)</p>
+      @foreach ($genres as $genre)
+        {{ Form::label('genres', $genre->name) }}
+        {{ Form::checkbox('genres[]', $genre->id), ['class' => 'input'] }}
+      @endforeach
+    </div>
     {{ Form::label('price', 'Price') }}
     {{ Form::number('price', '17', ['class' => 'input', 'min' => '0']) }}
     {{ Form::label('stock', 'stock') }}
     {{ Form::number('stock', '12', ['class' => 'input', 'min' => '0']) }}
-    {{ Form::submit('Insert', ['class' => 'submit']) }}
+    {{ Form::submit('Insert', ['class' => 'button']) }}
   {{ Form::close() }}
 @endsection

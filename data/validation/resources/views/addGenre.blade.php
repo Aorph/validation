@@ -5,8 +5,8 @@
       <ul>
         <li><a href="/cds">CDs</a></li>
         <li><a href="/insertCD">Add CD</a></li>
-        <li><a href="/instruments">Intruments</a></li>
         <li><a href="/addGenre">Add Genre</a></li>
+        <li><a href="/instruments">Intruments</a></li>
       </ul>
     </nav>
   </header>
@@ -15,6 +15,6 @@
   {{ Form::open(['url' => '/insertGenre', 'method' => 'post', 'class' => 'form']) }}
     {{ Form::label('name', 'Name') }}
     {{ Form::text('name', 'Rock', ['class' => 'input']) }}
-    {{ Form::submit('Insert', ['class' => 'submit']) }}
+    {{ Form::submit('Insert', ['class' => 'button submit2']) }}
   {{ Form::close() }}
 @endsection
