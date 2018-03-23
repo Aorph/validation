@@ -38,10 +38,13 @@
       <tr>
         <td class="big">{{ $cd['name'] }}</td>
         <td>{{ $cd['artist'] }}</td>
+        @foreach ($cd->genres as $genre)
+          <td>Coucou{{ $genre['name'] }}</td>
+        @endforeach
         <td>{{ $cd['genre'] }}</td>
         <td>{{ $cd['price'] }}</td>
         <td>{{ $cd['stock'] }}</td>
-        <td>
+        <td class="small">
           {{ Form::open(['url' => '/updateCD', 'method' => 'post']) }}
             {{ Form::hidden('id', $cd['id']) }}
             {{ Form::submit('U', ['class' => 'button']) }}

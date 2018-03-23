@@ -36,10 +36,11 @@ class StockController extends Controller
   }
   //CD FUNCTIONS
   public function insertCDIntoDB(Request $request) {
+    //dd($request->input('id'));
     $cd = new Disc();
     $cd->name = $request->name;
     $cd->artist = $request->artist;
-    $cd->genre = $request->genre;
+    $cd->genre_id = $request->input('id');
     $cd->price = $request->price;
     $cd->stock = $request->stock;
     $cd->save();

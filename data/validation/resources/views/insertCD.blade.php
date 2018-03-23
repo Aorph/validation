@@ -18,14 +18,14 @@
     {{ Form::text('name', 'In becoming a Ghost', ['class' => 'input']) }}
     {{ Form::label('artist', 'Artist') }}
     {{ Form::text('artist', 'The Faceless', ['class' => 'input']) }}
-    {{ Form::label('genre', 'Genre') }}
-    {{ Form::text('genre', 'rock', ['class' => 'input']) }}
-    <!-- SHIT'S NOT WORKING.
+    {{-- Form::label('genre', 'Genre') }}
+    {{ Form::text('genre', 'rock', ['class' => 'input']) --}}
+    <!-- SHIT'S NOT WORKING.-->
     @foreach ($genres as $genre)
       {{ Form::label('genre', $genre['name']) }}
+      {{ Form::hidden('id', $genre['id']) }}
       {{ Form::checkbox('genre', $genre['name'], ['class' => 'input']) }}
     @endforeach
-    -->
     {{ Form::label('price', 'Price') }}
     {{ Form::number('price', '17', ['class' => 'input', 'min' => '0']) }}
     {{ Form::label('stock', 'stock') }}

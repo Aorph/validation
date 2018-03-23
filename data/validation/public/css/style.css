@@ -28,6 +28,7 @@ ul {
 }
 
 li {
+  display: flex;
   text-align: center;
   width: 15%;
   border-radius: 2px;
@@ -40,6 +41,8 @@ li:hover {
 }
 
 a {
+  margin: 0;
+  width: 100%;
   list-style: none;
   text-decoration: none;
   margin-left: 5px;
@@ -78,7 +81,7 @@ tr {
 th, td {
   text-align: center;
   width: 10%;
-  height: 25px;
+  max-height: 40px;
 }
 
 .big {
