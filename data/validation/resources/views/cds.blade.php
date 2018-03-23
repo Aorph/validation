@@ -12,6 +12,17 @@
   </header>
 @endsection
 @section('main')
+  <p>All genres</p>
+  <table>
+    <tr>
+      <th>Name</th>
+    </tr>
+    @foreach ($genres as $genre)
+      <tr>
+        <td> {{ $genre['name'] }}</td>
+      </tr>
+    @endforeach
+  </table>
   <p>All CDs</p>
   <table>
     <tr>
@@ -23,26 +34,26 @@
       <th>Update</th>
       <th>Delete</th>
     </tr>
-      @foreach ($cds as $cd)
-        <tr>
-          <td class="big">{{ $cd['name'] }}</td>
-          <td>{{ $cd['artist'] }}</td>
-          <td>{{ $cd['genre'] }}</td>
-          <td>{{ $cd['price'] }}</td>
-          <td>{{ $cd['stock'] }}</td>
-          <td>
-            {{ Form::open(['url' => '/updateCD', 'method' => 'post']) }}
-              {{ Form::hidden('id', $cd['id']) }}
-              {{ Form::submit('U', ['class' => 'button']) }}
-            {{ Form::close() }}
-          </td>
-          <td class="small">
-            {{ Form::open(['url' => '/deleteCD', 'method' => 'post']) }}
-              {{ Form::hidden('id', $cd['id']) }}
-              {{ Form::submit('X', ['class' => 'button']) }}
-            {{ Form::close() }}
-          </td>
-        </tr>
-      @endforeach
+    @foreach ($cds as $cd)
+      <tr>
+        <td class="big">{{ $cd['name'] }}</td>
+        <td>{{ $cd['artist'] }}</td>
+        <td>{{ $cd['genre'] }}</td>
+        <td>{{ $cd['price'] }}</td>
+        <td>{{ $cd['stock'] }}</td>
+        <td>
+          {{ Form::open(['url' => '/updateCD', 'method' => 'post']) }}
+            {{ Form::hidden('id', $cd['id']) }}
+            {{ Form::submit('U', ['class' => 'button']) }}
+          {{ Form::close() }}
+        </td>
+        <td class="small">
+          {{ Form::open(['url' => '/deleteCD', 'method' => 'post']) }}
+            {{ Form::hidden('id', $cd['id']) }}
+            {{ Form::submit('X', ['class' => 'button']) }}
+          {{ Form::close() }}
+        </td>
+      </tr>
+    @endforeach
   </table>
 @endsection

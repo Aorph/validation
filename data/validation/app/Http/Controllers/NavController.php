@@ -25,7 +25,8 @@ class NavController extends Controller
   //CD FUNCTIONS
   public function showCDs() {
     $cds = Disc::all();
-    return view('cds', ['cds' => $cds]);
+    $genres = Genre::all();
+    return view('cds', ['cds' => $cds, 'genres' => $genres]);
   }
   public function insertCD() {
     $genres = Genre::all();
