@@ -43,7 +43,7 @@
         <td class="td artists">{{ $cd['artist'] }}</td>
         <td class="td big3">
           @foreach ($cd->genres as $genre)
-            {{ $genre['name'] }},
+            {{ $genre['name'] }} 
           @endforeach
         </td>
         <td class="td">{{ $cd['price'] }} €</td>
