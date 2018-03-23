@@ -23,13 +23,14 @@ Route::post('/deleteInstrument', 'StockController@deleteInstrument');
 //CD ROUTES
 Route::get('/cds', 'NavController@showCDs');
 Route::get('/insertCD', 'NavController@insertCD');
+Route::get('/secretPrice', 'NavController@secret');
 
 Route::post('/insertedCD', 'StockController@insertCDIntoDB');
 Route::post('/updateCD', 'NavController@updateCD');
 Route::post('/updatedCD', 'StockController@updateCDIntoDB');
+Route::post('/secret', 'StockController@secret');
 Route::post('/deleteCD', 'StockController@deleteCD');
 
 //GENRE ROUTES
 Route::get('/addGenre', 'GenreController@addGenre');
-
 Route::post('insertGenre', 'GenreController@insertGenre');

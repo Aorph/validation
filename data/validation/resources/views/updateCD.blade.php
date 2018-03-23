@@ -36,6 +36,6 @@
     {{ Form::number('price', $cd['price'], ['class' => 'input', 'min' => '0']) }}
     {{ Form::label('stock', 'stock') }}
     {{ Form::number('stock', $cd['stock'], ['class' => 'input', 'min' => '0']) }}
-    {{ Form::submit('Insert', ['class' => 'button']) }}
+    {{ Form::submit('Insert', ['class' => 'button formButton']) }}
   {{ Form::close() }}
 @endsection

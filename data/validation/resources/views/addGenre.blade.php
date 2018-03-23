@@ -15,6 +15,6 @@
   {{ Form::open(['url' => '/insertGenre', 'method' => 'post', 'class' => 'form']) }}
     {{ Form::label('name', 'Name') }}
     {{ Form::text('name', 'Rock', ['class' => 'input']) }}
-    {{ Form::submit('Insert', ['class' => 'button submit2']) }}
+    {{ Form::submit('Insert', ['class' => 'button formButton submit2']) }}
   {{ Form::close() }}
 @endsection

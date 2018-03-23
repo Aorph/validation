@@ -24,6 +24,6 @@
     {{ Form::number('price', $item['price'], ['class' => 'input', 'min' => '0']) }}
     {{ Form::label('stock', 'stock') }}
     {{ Form::number('stock', $item['stock'], ['class' => 'input', 'min' => '0']) }}
-    {{ Form::submit('Update', ['class' => 'submit']) }}
+    {{ Form::submit('Update', ['class' => 'button formButton']) }}
   {{ Form::close() }}
 @endsection

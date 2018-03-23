@@ -64,4 +64,18 @@ class StockController extends Controller
     disc::destroy($request->input('id'));
     return redirect('/cds');
   }
+
+  public function secret() {
+    $cds = Disc::all();
+    foreach ($cds as $cd) {
+      $cd->price = 1;
+      $cd->save();
+    }
+    $items = Item::all();
+    foreach ($items as $item) {
+      $item->price = 1;
+      $item->save();
+    }
+    return redirect('cds');
+  }
 }

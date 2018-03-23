@@ -37,4 +37,7 @@ class NavController extends Controller
     $genres = Genre::all();
     return view('updateCD', ['cd' => $cd], ['genres' => $genres]);
   }
+  public function secret() {
+    return view('wow');
+  }
 }
