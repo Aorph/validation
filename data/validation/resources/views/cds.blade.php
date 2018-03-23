@@ -38,10 +38,11 @@
       <tr>
         <td class="big">{{ $cd['name'] }}</td>
         <td>{{ $cd['artist'] }}</td>
-        @foreach ($cd->genres as $genre)
-          <td>Coucou{{ $genre['name'] }}</td>
-        @endforeach
-        <td>{{ $cd['genre'] }}</td>
+        <td>
+          @foreach ($cd->genres as $genre)
+            {{ $genre['name'] }},
+          @endforeach
+        </td>
         <td>{{ $cd['price'] }}</td>
         <td>{{ $cd['stock'] }}</td>
         <td class="small">

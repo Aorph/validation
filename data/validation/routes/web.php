@@ -26,6 +26,8 @@ Route::get('/insertCD', 'NavController@insertCD');
 
 Route::post('/insertedCD', 'StockController@insertCDIntoDB');
 Route::post('/updateCD', 'NavController@updateCD');
+Route::post('/updatedCD', 'StockController@updateCDIntoDB');
+Route::post('/deleteCD', 'StockController@deleteCD');
 
 //GENRE ROUTES
 Route::get('/addGenre', 'GenreController@addGenre');

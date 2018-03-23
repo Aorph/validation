@@ -36,14 +36,32 @@ class StockController extends Controller
   }
   //CD FUNCTIONS
   public function insertCDIntoDB(Request $request) {
-    //dd($request->input('id'));
     $cd = new Disc();
-    $cd->name = $request->name;
-    $cd->artist = $request->artist;
-    $cd->genre_id = $request->input('id');
-    $cd->price = $request->price;
-    $cd->stock = $request->stock;
+    $cd->name = $request->input('name');
+    $cd->artist = $request->input('artist');
+    $cd->price = $request->input('price');
+    $cd->stock = $request->input('stock');
     $cd->save();
+    foreach ($request->input('genres') as $genres) {
+      $cd->genres()->attach($genres);
+    }
+    return redirect('/cds');
+  }
+  public function updateCDIntoDB(Request $request) {
+    $cd = Disc::findOrFail($request->input('id'));
+    $cd->name = $request->input('name');
+    $cd->artist = $request->input('artist');
+    $cd->price = $request->input('price');
+    $cd->stock = $request->input('stock');
+    $cd->save();
+    $cd->genres()->detach();
+    foreach ($request->input('genres') as $genres) {
+      $cd->genres()->attach($genres);
+    }
+    return redirect('/cds');
+  }
+  public function deleteCD(Request $request) {
+    disc::destroy($request->input('id'));
     return redirect('/cds');
   }
 }

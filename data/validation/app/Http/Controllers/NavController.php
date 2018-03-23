@@ -33,7 +33,8 @@ class NavController extends Controller
     return view('insertCD', ['genres' => $genres]);
   }
   public function updateCD(Request $request) {
-    $cd = Disk::findOrFail($request['id']);
-    return view('updateCD', ['cd' => $cd]);
+    $cd = Disc::findOrFail($request['id']);
+    $genres = Genre::all();
+    return view('updateCD', ['cd' => $cd], ['genres' => $genres]);
   }
 }

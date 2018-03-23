@@ -19,8 +19,18 @@
     {{ Form::text('name', $cd['name'], ['class' => 'input']) }}
     {{ Form::label('artist', 'Artist') }}
     {{ Form::text('artist', $cd['artist'], ['class' => 'input']) }}
-    {{ Form::label('genre', 'Genre') }}
-    {{ Form::text('genre', $cd['genre'], ['class' => 'input']) }}
+    {{-- Form::label('genre', 'Genre') }}
+    {{ Form::text('genre', $cd['genre'], ['class' => 'input']) --}}
+    <?php $flag = false ?>
+    @foreach ($genres as $genre)
+        @if($cd->genres->contains($genre->id))
+          {{ Form::label('genres', $genre->name) }}
+          {{ Form::checkbox('genres[]', $genre->id, ['checked' => 'checked ', 'class' => 'input']) }}
+        @else
+        {{ Form::label('genres', $genre->name) }}
+        {{ Form::checkbox('genres[]', $genre->id), ['class' => 'input'] }}
+      @endif
+    @endforeach
     {{ Form::label('price', 'Price') }}
     {{ Form::number('price', $cd['price'], ['class' => 'input', 'min' => '0']) }}
     {{ Form::label('stock', 'stock') }}

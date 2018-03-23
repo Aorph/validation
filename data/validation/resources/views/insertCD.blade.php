@@ -22,9 +22,8 @@
     {{ Form::text('genre', 'rock', ['class' => 'input']) --}}
     <!-- SHIT'S NOT WORKING.-->
     @foreach ($genres as $genre)
-      {{ Form::label('genre', $genre['name']) }}
-      {{ Form::hidden('id', $genre['id']) }}
-      {{ Form::checkbox('genre', $genre['name'], ['class' => 'input']) }}
+      {{ Form::label('genres', $genre->name) }}
+      {{ Form::checkbox('genres[]', $genre->id) }}
     @endforeach
     {{ Form::label('price', 'Price') }}
     {{ Form::number('price', '17', ['class' => 'input', 'min' => '0']) }}

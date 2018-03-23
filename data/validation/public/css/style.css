@@ -70,6 +70,7 @@ table, tbody {
   justify-content: center;
   flex-direction: column;
   border: 1px solid black;
+  box-shadow: 10px -6px 1px teal;
 }
 
 tr {

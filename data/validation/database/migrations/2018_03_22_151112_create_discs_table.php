@@ -17,7 +17,6 @@ class CreateDiscsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('artist');
-            $table->integer('genre_id');
             $table->integer('price');
             $table->integer('stock');
             $table->timestamps();
